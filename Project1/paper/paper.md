@@ -38,7 +38,7 @@ Discussion
 Makefile organizes code compilation. It is a list of shell commands or a
 list of rules that tells the system what to do. Makefile is made through
 terminal and a text editor. Hence, we should make sure we have these
-programs installed. To test it out, type make in terminal.
+programs installed. To test it out, type 'make' in terminal.
 
 Makefile files are usually named ‘Makefile.’ I personally use nano as my
 text editor, hence, the code I would type in terminal to create a
@@ -46,24 +46,24 @@ Makefile is:
 
     nano Makefile
 
-Inside the text editor, there is a specific format:
+Inside the text editor, there is a specific format as follows:
 
-target: source
+    target: source
 
-(tab) commands
+    (tab) commands
 
-To execute, type ‘make.’ This would compile all the codes are run them
-as a whole.
+To execute, again type ‘make.’ This would compile all the codes are run
+them as a whole.
 
 The advantage of using Makefile is that we can edit multiple files and
 Makefile helps compile all of them.
 
 ### Git
 
-![Git logo](sections/Project1/images/git-logo.png) Git is a version
-control system. It stores the revisions of projects users are working on
-in a central repository by taking “snapshots.” It also allows users to
-collaborate very easily. It allows users to track their changes by
+![Git logo](/Project1/images/git-logo.png) Git is a version control
+system. It stores revisions of projects users are working on in a
+central repository by taking “snapshots.” It also allows users to
+collaborate very easily and allows users to track their changes by
 committing to these changes and they’ll be stored.
 
 To use Git, we should know some basic codes:
@@ -72,8 +72,8 @@ To use Git, we should know some basic codes:
 
     git commit –m “message”
 
-git add adds all the content into the working tree, git commit saves the
-changes.
+git add adds all the content into the working tree and git commit saves
+the changes.
 
 The advantage of using Git is that we can track our previous changes and
 collaboration is very easy.
@@ -98,25 +98,28 @@ somewhat similar.
 
 ### pandoc
 
-![pandoc logo](sections/Project1/images/pandoc-logo.png) Pandoc converts
-one markup format to another. Just to name a few, it can read Markdown,
-CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc. and can
-write Markdown, Word docx, LaTex, Textile, etc. For instance, for this
-report, we convert from Markdown to HTML using the following code:
+![pandoc logo](/sections/Project1/images/pandoc-logo.png) pandoc
+converts one markup format to another. Just to name a few, it can read
+Markdown, CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc.
+and can write Markdown, Word docx, LaTex, Textile, etc. For instance,
+for this report, we convert from Markdown to HTML using the following
+code:
 
     pandoc paper.md –s –o paper.html
 
 The –s represents producing a standalone document and the –o represents
-the output file. Meanwhile, like Makefile, some computer requires users
-to download the pandoc software, in addition to other softwares like
-LaTex to output text files. After downloading all the required software,
-we are ready to convert files.
+the output file.
+
+Meanwhile, like Makefile, some computer requires users to download the
+pandoc software, in addition to other softwares like LaTex to output
+text files. After downloading all the required software, we are ready to
+convert files.
 
 The advantages of using pandoc is that we can have numerous different
 outputs without having to remake them. I realize that when I want to
 output a report, it is at times better to output a HTML file and other
-times better to output a text editor file. Hence, pandoc will come
-really handy here.
+times better to output a text editor file. pandoc will become handy in
+situations like this.
 
 ### Markdown
 
@@ -127,11 +130,6 @@ links, create tables, etc. A lot of its syntax corresponds to HTML.
 Below are some syntax that Markdown can do:
 
 Create bullet lists:
-
--   Create 1st header:
-
-    -   Heading 1
-        =========
 
 -   Create 2nd header:
 
