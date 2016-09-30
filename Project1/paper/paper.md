@@ -44,11 +44,13 @@ Makefile files are usually named ‘Makefile.’ I personally use nano as my
 text editor, hence, the code I would type in terminal to create a
 Makefile is:
 
-nano Makefile
+    nano Makefile
 
-Inside the text editor, there is a specific format: target: source
+Inside the text editor, there is a specific format:
 
-    commands
+target: source
+
+(tab) commands
 
 To execute, type ‘make.’ This would compile all the codes are run them
 as a whole.
@@ -66,9 +68,9 @@ committing to these changes and they’ll be stored.
 
 To use Git, we should know some basic codes:
 
-git add .
+    git add .
 
-git commit –m “message”
+    git commit –m “message”
 
 git add adds all the content into the working tree, git commit saves the
 changes.
@@ -87,7 +89,7 @@ they made.
 
 To save the changes made locally to the central repository, we use:
 
-git push origin branch
+    git push origin branch
 
 git push permanently saves the changes into GitHub.
 
@@ -102,7 +104,7 @@ CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc. and can
 write Markdown, Word docx, LaTex, Textile, etc. For instance, for this
 report, we convert from Markdown to HTML using the following code:
 
-pandoc paper.md –s –o paper.html
+    pandoc paper.md –s –o paper.html
 
 The –s represents producing a standalone document and the –o represents
 the output file. Meanwhile, like Makefile, some computer requires users
@@ -118,8 +120,8 @@ really handy here.
 
 ### Markdown
 
-![Markdown logo](sections/Project1/images/markdown-logo.png) Markdown is
-a markup language that helps format text. It creates rich text using a
+![Markdown logo](paper/Project1/images/markdown-logo.png) Markdown is a
+markup language that helps format text. It creates rich text using a
 plain text editor where users can bold, italicize, put in pictures,
 links, create tables, etc. A lot of its syntax corresponds to HTML.
 Below are some syntax that Markdown can do:

@@ -4,12 +4,13 @@ Makefile organizes code compilation. It is a list of shell commands or a list of
 
 Makefile files are usually named ‘Makefile.’ I personally use nano as my text editor, hence, the code I would type in terminal to create a Makefile is:
 
-nano Makefile
+	nano Makefile
 
 Inside the text editor, there is a specific format:
+
 target: source
 
-	commands
+(tab) commands
 
 To execute, type ‘make.’ This would compile all the codes are run them as a whole.
 
@@ -21,9 +22,9 @@ Git is a version control system. It stores the revisions of projects users are w
 
 To use Git, we should know some basic codes:
 
-git add .
+	git add .
 
-git commit –m “message”
+	git commit –m “message”
 
 git add adds all the content into the working tree, git commit saves the changes.
 
@@ -35,7 +36,7 @@ GitHub is a Git repository hosting service. It provides a central repository for
 
 To save the changes made locally to the central repository, we use:
 
-git push origin branch
+	git push origin branch
 
 git push permanently saves the changes into GitHub.
 
@@ -45,25 +46,25 @@ GitHub and Git work together a lot, hence the benefit of using them are somewhat
 ![pandoc logo](sections/Project1/images/pandoc-logo.png)
 Pandoc converts one markup format to another. Just to name a few, it can read Markdown, CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc. and can write Markdown, Word docx, LaTex, Textile, etc. For instance, for this report, we convert from Markdown to HTML using the following code:
 
-pandoc paper.md –s –o paper.html
+	pandoc paper.md –s –o paper.html
 
 The –s represents producing a standalone document and the –o represents the output file. Meanwhile, like Makefile, some computer requires users to download the pandoc software, in addition to other softwares like LaTex to output text files. After downloading all the required software, we are ready to convert files.
 
 The advantages of using pandoc is that we can have numerous different outputs without having to remake them. I realize that when I want to output a report, it is at times better to output a HTML file and other times better to output a text editor file. Hence, pandoc will come really handy here.
 
 ### Markdown
-![Markdown logo](sections/Project1/images/markdown-logo.png)
+![Markdown logo](paper/Project1/images/markdown-logo.png)
 Markdown is a markup language that helps format text. It creates rich text using a plain text editor where users can bold, italicize, put in pictures, links, create tables, etc. A lot of its syntax corresponds to HTML. Below are some syntax that Markdown can do:
 
 Create bullet lists:
 
 * Create 1st header:
 
-	+ # Heading 1
+	+ #Heading 1
 
 * Create 2nd header:
 
-	+ ## Heading 2
+	+ ##Heading 2
 
 * Italicize:
 
