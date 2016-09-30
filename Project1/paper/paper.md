@@ -1,12 +1,18 @@
+Abstract
+========
+
 This report is the first project of STAT 159, Reproducible and
 Collaborative Statistical Data Science, taught by Professor Gaston
 Sanchez in the fall of 2016 at UC Berkeley. STAT 159 focuses on the
 collaborative work and the ability to reproduce valuable data.
 
-This report will consist of 4 parts: abstract, introduction, discussion,
-and conclusion, where computational tools we have covered in class will
-be practiced and explained in some depth. The computational tools are
-Makefile, Git, GitHub, pandoc, and Markdown.
+There will be 4 parts in this report: abstract, introduction,
+discussion, and conclusion, where computational tools we have covered in
+class will be practiced and explained in some depth. The computational
+tools are Makefile, Git, GitHub, pandoc, and Markdown.
+
+Introduction
+============
 
 Reproducibility is an ongoing issue today. It is important that a
 scientific finding is reproducible, meaning the entire experiment or
@@ -24,6 +30,9 @@ Makefile, Git, GitHub, pandoc, and Markdown does, followed by some
 example and last but not least, discuss the roles each tool plays in
 reproducing data.
 
+Discussion
+==========
+
 ### Makefile
 
 Makefile organizes code compilation. It is a list of shell commands or a
@@ -33,9 +42,11 @@ programs installed. To test it out, type make in terminal.
 
 Makefile files are usually named ‘Makefile.’ I personally use nano as my
 text editor, hence, the code I would type in terminal to create a
-Makefile is: nano Makefile
+Makefile is:\
+nano Makefile
 
-Inside the text editor, there is a specific format: target: source
+Inside the text editor, there is a specific format:\
+target: source\
 commands
 
 To execute, type ‘make.’ This would compile all the codes are run them
@@ -46,14 +57,15 @@ Makefile helps compile all of them.
 
 ### Git
 
-![Git logo](images/git-logo.png) Git. is a version control system. It
+![Git logo](images/git-logo.png) Git is a version control system. It
 stores the revisions of projects users are working on in a central
 repository by taking “snapshots.” It also allows users to collaborate
 very easily. It allows users to track their changes by committing to
 these changes and they’ll be stored.
 
-To use Git, we should know some basic codes: git add . git commit –m
-“message”
+To use Git, we should know some basic codes:\
+git add .\
+git commit –m “message”
 
 git add adds all the content into the working tree, git commit saves the
 changes.
@@ -63,15 +75,15 @@ collaboration is very easy.
 
 ### GitHub
 
-![GitHub logo](images/github-logo.png) GitHub is a Git repository
-hosting service. It provides a central repository for all files
-associated with a project where code sharing and publishing is involved.
-It allows users to make changes in their local copy then push it into
-the central repository when they are satisfied with the changes they
-made.
+![GitHub logo](Project1/images/github-logo.png) GitHub is a Git
+repository hosting service. It provides a central repository for all
+files associated with a project where code sharing and publishing is
+involved. It allows users to make changes in their local copy then push
+it into the central repository when they are satisfied with the changes
+they made.
 
-To save the changes made locally to the central repository, we use: git
-push origin branch
+To save the changes made locally to the central repository, we use:\
+git push origin branch
 
 git push permanently saves the changes into GitHub.
 
@@ -84,8 +96,8 @@ somewhat similar.
 to another. Just to name a few, it can read Markdown, CommonMark, HTML,
 LaTex, CommonMark, PHP Markdown Extra, etc. and can write Markdown, Word
 docx, LaTex, Textile, etc. For instance, for this report, we convert
-from Markdown to HTML using the following code: pandoc paper.md –s –o
-paper.html
+from Markdown to HTML using the following code:\
+pandoc paper.md –s –o paper.html
 
 The –s represents producing a standalone document and the –o represents
 the output file. Meanwhile, like Makefile, some computer requires users
@@ -93,7 +105,7 @@ to download the pandoc software, in addition to other softwares like
 LaTex to output text files. After downloading all the required software,
 we are ready to convert files.
 
-The benefit of using pandoc is that we can have numerous different
+The advantages of using pandoc is that we can have numerous different
 outputs without having to remake them. I realize that when I want to
 output a report, it is at times better to output a HTML file and other
 times better to output a text editor file. Hence, pandoc will come
@@ -104,10 +116,17 @@ really handy here.
 ![Markdown logo](images/markdown-logo.png) Markdown is a markup language
 that helps format text. It creates rich text using a plain text editor
 where users can bold, italicize, put in pictures, links, create tables,
-etc. A lot of its syntax corresponds to HTML. Below are some syntaxes
-that Markdown can do: Create bullet lists: \* Create 1st header: + \#
-Heading 1 \* Create 2nd header: + \#\# Heading 2 \* Italicize: +
-*italic* \* Bold: + **bold**
+etc. A lot of its syntax corresponds to HTML. Below are some syntax that
+Markdown can do:\
+Create bullet lists:\
+\* Create 1st header:\
++ \# Heading 1\
+\* Create 2nd header:\
++ \#\# Heading 2\
+\* Italicize:\
++ *italic*\
+\* Bold:\
++ **bold**
 
 The advantage of using Markdown is that no additional software is needed
 to make changes to the text and the codes are rather simple as compared
