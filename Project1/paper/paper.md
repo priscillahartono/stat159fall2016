@@ -80,7 +80,7 @@ collaboration is very easy.
 
 ### GitHub
 
-![GitHub logo](sections/Project1/images/github-logo.png) GitHub is a Git
+![GitHub logo](/Project1/images/github-logo.png) GitHub is a Git
 repository hosting service. It provides a central repository for all
 files associated with a project where code sharing and publishing is
 involved. It allows users to make changes in their local copy then push
@@ -98,12 +98,11 @@ somewhat similar.
 
 ### pandoc
 
-![pandoc logo](/sections/Project1/images/pandoc-logo.png) pandoc
-converts one markup format to another. Just to name a few, it can read
-Markdown, CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc.
-and can write Markdown, Word docx, LaTex, Textile, etc. For instance,
-for this report, we convert from Markdown to HTML using the following
-code:
+![pandoc logo](/Project1/images/pandoc-logo.png) pandoc converts one
+markup format to another. Just to name a few, it can read Markdown,
+CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc. and can
+write Markdown, Word docx, LaTex, Textile, etc. For instance, for this
+report, we convert from Markdown to HTML using the following code:
 
     pandoc paper.md –s –o paper.html
 
@@ -123,7 +122,7 @@ situations like this.
 
 ### Markdown
 
-![Markdown logo](paper/Project1/images/markdown-logo.png) Markdown is a
+![Markdown logo](/Project1/images/markdown-logo.png) Markdown is a
 markup language that helps format text. It creates rich text using a
 plain text editor where users can bold, italicize, put in pictures,
 links, create tables, etc. A lot of its syntax corresponds to HTML.
@@ -131,17 +130,18 @@ Below are some syntax that Markdown can do:
 
 Create bullet lists:
 
--   Create 2nd header:
-
-    -   Heading 2
-        ---------
-
 -   Italicize:
 
     -   *italic*
 -   Bold:
 
     -   **bold**
+
+Create table:
+
+  Professor        GSI
+  ---------------- ------------------
+  Gaston Sanchez   Sindhuja Jeyabal
 
 The advantage of using Markdown is that no additional software is needed
 to make changes to the text and the codes are rather simple as compared
