@@ -1,5 +1,5 @@
 # Discussion  
-### Makefile
+## Makefile
 Makefile organizes code compilation. It is a list of shell commands or a list of rules that tells the system what to do. Makefile is made through terminal and a text editor. Hence, we should make sure we have these programs installed. To test it out, type 'make' in terminal. 
 
 Makefile files are usually named ‘Makefile.’ I personally use nano as my text editor, hence, the code I would type in terminal to create a Makefile is:
@@ -16,7 +16,8 @@ To execute, again type ‘make.’ This would compile all the codes are run them
 
 The advantage of using Makefile is that we can edit multiple files and Makefile helps compile all of them. 
 
-### Git
+
+## Git
 ![Git logo](/Project1/images/git-logo.png)
 
 Git is a version control system. It stores revisions of projects users are working on in a central repository by taking “snapshots.” It also allows users to collaborate very easily and allows users to track their changes by committing to these changes and they’ll be stored. 
@@ -31,7 +32,8 @@ git add adds all the content into the working tree and git commit saves the chan
 
 The advantage of using Git is that we can track our previous changes and collaboration is very easy.
 
-### GitHub
+
+## GitHub
 ![GitHub logo](/Project1/images/github-logo.png)
 
 GitHub is a Git repository hosting service. It provides a central repository for all files associated with a project where code sharing and publishing is involved.  It allows users to make changes in their local copy then push it into the central repository when they are satisfied with the changes they made.
@@ -44,7 +46,8 @@ git push permanently saves the changes into GitHub.
 
 GitHub and Git work together a lot, hence the benefit of using them are somewhat similar.
 
-### pandoc
+
+## pandoc
 ![pandoc logo](/Project1/images/pandoc-logo.png)
 
 pandoc converts one markup format to another. Just to name a few, it can read Markdown, CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc. and can write Markdown, Word docx, LaTex, Textile, etc. For instance, for this report, we convert from Markdown to HTML using the following code:
@@ -57,7 +60,8 @@ Meanwhile, like Makefile, some computer requires users to download the pandoc so
 
 The advantages of using pandoc is that we can have numerous different outputs without having to remake them. I realize that when I want to output a report, it is at times better to output a HTML file and other times better to output a text editor file. pandoc will become handy in situations like this.
 
-### Markdown
+
+## Markdown
 ![Markdown logo](/Project1/images/markdown-logo.png)
 
 Markdown is a markup language that helps format text. It creates rich text using a plain text editor where users can bold, italicize, put in pictures, links, create tables, etc. A lot of its syntax corresponds to HTML. Below are some syntax that Markdown can do:
@@ -72,11 +76,16 @@ Create bullet lists:
 
 	+ __bold__  
 
-Create table:
+Create blockquote:
 
-   Professor   |        GSI
--------------- | ---------------
-Gaston Sanchez | Sindhuja Jeyabal 
+This is a blockquote:
+
+> This is project 1 of STAT 159
+> by Priscilla Hartono
+
+Create horizontal rule:
+
+******
 
 The advantage of using Markdown is that no additional software is needed to make changes to the text and the codes are rather simple as compared to other programming languages.
 

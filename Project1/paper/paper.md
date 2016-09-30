@@ -33,7 +33,8 @@ reproducing data.
 Discussion
 ==========
 
-### Makefile
+Makefile
+--------
 
 Makefile organizes code compilation. It is a list of shell commands or a
 list of rules that tells the system what to do. Makefile is made through
@@ -58,7 +59,8 @@ them as a whole.
 The advantage of using Makefile is that we can edit multiple files and
 Makefile helps compile all of them.
 
-### Git
+Git
+---
 
 ![Git logo](/Project1/images/git-logo.png)
 
@@ -79,7 +81,8 @@ the changes.
 The advantage of using Git is that we can track our previous changes and
 collaboration is very easy.
 
-### GitHub
+GitHub
+------
 
 ![GitHub logo](/Project1/images/github-logo.png)
 
@@ -98,7 +101,8 @@ git push permanently saves the changes into GitHub.
 GitHub and Git work together a lot, hence the benefit of using them are
 somewhat similar.
 
-### pandoc
+pandoc
+------
 
 ![pandoc logo](/Project1/images/pandoc-logo.png)
 
@@ -124,7 +128,8 @@ output a report, it is at times better to output a HTML file and other
 times better to output a text editor file. pandoc will become handy in
 situations like this.
 
-### Markdown
+Markdown
+--------
 
 ![Markdown logo](/Project1/images/markdown-logo.png)
 
@@ -142,11 +147,15 @@ Create bullet lists:
 
     -   **bold**
 
-Create table:
+Create blockquote:
 
-  Professor        GSI
-  ---------------- ------------------
-  Gaston Sanchez   Sindhuja Jeyabal
+This is a blockquote:
+
+> This is project 1 of STAT 159 by Priscilla Hartono
+
+Create horizontal rule:
+
+------------------------------------------------------------------------
 
 The advantage of using Markdown is that no additional software is needed
 to make changes to the text and the codes are rather simple as compared

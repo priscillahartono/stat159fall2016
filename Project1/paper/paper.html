@@ -15,7 +15,7 @@
 <p>Reproducibility is an ongoing issue today. It is important that a scientific finding is reproducible, meaning the entire experiment or study should be able to produce the same results when the same researcher or other researchers redo it. With the numerous amount of information we can find today, we cannot trust everything we see. Hence, having reproducible data is extremely important. A lot of articles on the web often include how many times the experiment was repeated and how they produced similar results, therefore proving reproducibility.</p>
 <p>The objective of this report is to practice with the computational tools we have covered in class: bash, Markdown, pandoc, Git, GitHub, Make, and a text editor (nano). I will firstly give a brief explanation of what Makefile, Git, GitHub, pandoc, and Markdown does, followed by some example and last but not least, discuss the roles each tool plays in reproducing data.</p>
 <h1 id="discussion">Discussion</h1>
-<h3 id="makefile">Makefile</h3>
+<h2 id="makefile">Makefile</h2>
 <p>Makefile organizes code compilation. It is a list of shell commands or a list of rules that tells the system what to do. Makefile is made through terminal and a text editor. Hence, we should make sure we have these programs installed. To test it out, type 'make' in terminal.</p>
 <p>Makefile files are usually named ‘Makefile.’ I personally use nano as my text editor, hence, the code I would type in terminal to create a Makefile is:</p>
 <pre><code>nano Makefile</code></pre>
@@ -25,7 +25,7 @@
 (tab) commands</code></pre>
 <p>To execute, again type ‘make.’ This would compile all the codes are run them as a whole.</p>
 <p>The advantage of using Makefile is that we can edit multiple files and Makefile helps compile all of them.</p>
-<h3 id="git">Git</h3>
+<h2 id="git">Git</h2>
 <div class="figure">
 <img src="/Project1/images/git-logo.png" alt="Git logo" />
 <p class="caption">Git logo</p>
@@ -37,7 +37,7 @@
 git commit –m “message”</code></pre>
 <p>git add adds all the content into the working tree and git commit saves the changes.</p>
 <p>The advantage of using Git is that we can track our previous changes and collaboration is very easy.</p>
-<h3 id="github">GitHub</h3>
+<h2 id="github">GitHub</h2>
 <div class="figure">
 <img src="/Project1/images/github-logo.png" alt="GitHub logo" />
 <p class="caption">GitHub logo</p>
@@ -47,7 +47,7 @@ git commit –m “message”</code></pre>
 <pre><code>git push origin branch</code></pre>
 <p>git push permanently saves the changes into GitHub.</p>
 <p>GitHub and Git work together a lot, hence the benefit of using them are somewhat similar.</p>
-<h3 id="pandoc">pandoc</h3>
+<h2 id="pandoc">pandoc</h2>
 <div class="figure">
 <img src="/Project1/images/pandoc-logo.png" alt="pandoc logo" />
 <p class="caption">pandoc logo</p>
@@ -57,7 +57,7 @@ git commit –m “message”</code></pre>
 <p>The –s represents producing a standalone document and the –o represents the output file.</p>
 <p>Meanwhile, like Makefile, some computer requires users to download the pandoc software, in addition to other softwares like LaTex to output text files. After downloading all the required software, we are ready to convert files.</p>
 <p>The advantages of using pandoc is that we can have numerous different outputs without having to remake them. I realize that when I want to output a report, it is at times better to output a HTML file and other times better to output a text editor file. pandoc will become handy in situations like this.</p>
-<h3 id="markdown">Markdown</h3>
+<h2 id="markdown">Markdown</h2>
 <div class="figure">
 <img src="/Project1/images/markdown-logo.png" alt="Markdown logo" />
 <p class="caption">Markdown logo</p>
@@ -74,21 +74,13 @@ git commit –m “message”</code></pre>
 <li><strong>bold</strong></li>
 </ul></li>
 </ul>
-<p>Create table:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Professor</th>
-<th align="left">GSI</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Gaston Sanchez</td>
-<td align="left">Sindhuja Jeyabal</td>
-</tr>
-</tbody>
-</table>
+<p>Create blockquote:</p>
+<p>This is a blockquote:</p>
+<blockquote>
+<p>This is project 1 of STAT 159 by Priscilla Hartono</p>
+</blockquote>
+<p>Create horizontal rule:</p>
+<hr />
 <p>The advantage of using Markdown is that no additional software is needed to make changes to the text and the codes are rather simple as compared to other programming languages.</p>
 <h3 id="resources">Resources</h3>
 <p>I did all the coding in Terminal. But before that, I had to download pandoc and create a GitHub account.</p>
