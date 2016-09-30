@@ -1,1 +1,2 @@
+# Conclusion
 The project, as a whole, definitely made me understand GitHub better. It allowed me to put together the pieces of the puzzle and create a final output where each computational tool compliment each other. Before, just using terminal to move files and copy files did not make sense to me, but after this project, seeing how everything comes together made me appreciate the existing tools. Overall, it was a great project that cleared up a lot of misunderstandings I had.
