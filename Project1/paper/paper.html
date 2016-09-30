@@ -23,19 +23,19 @@
 <pre><code>target: source
 
 (tab) commands</code></pre>
-<p>To execute, again type ‘make.’ This would compile all the codes are run them as a whole.</p>
+<p>To execute, again type ‘make.’ This would compile all the codes and run them as a whole.</p>
 <p>The advantage of using Makefile is that we can edit multiple files and Makefile helps compile all of them.</p>
 <h2 id="git">Git</h2>
 <div class="figure">
 <img src="/Project1/images/git-logo.png" alt="Git logo" />
 <p class="caption">Git logo</p>
 </div>
-<p>Git is a version control system. It stores revisions of projects users are working on in a central repository by taking “snapshots.” It also allows users to collaborate very easily and allows users to track their changes by committing to these changes and they’ll be stored.</p>
+<p>Git is a version control system. It stores revisions of projects users are working on in a central repository by taking “snapshots,&quot; which are pushed to the central repository to enable collaboration and tracking of changes.</p>
 <p>To use Git, we should know some basic codes:</p>
 <pre><code>git add .
 
 git commit –m “message”</code></pre>
-<p>git add adds all the content into the working tree and git commit saves the changes.</p>
+<p>git add adds all the content into the working tree and git commit saves the changes to the central repository.</p>
 <p>The advantage of using Git is that we can track our previous changes and collaboration is very easy.</p>
 <h2 id="github">GitHub</h2>
 <div class="figure">
@@ -43,7 +43,7 @@ git commit –m “message”</code></pre>
 <p class="caption">GitHub logo</p>
 </div>
 <p>GitHub is a Git repository hosting service. It provides a central repository for all files associated with a project where code sharing and publishing is involved. It allows users to make changes in their local copy then push it into the central repository when they are satisfied with the changes they made.</p>
-<p>To save the changes made locally to the central repository, we use:</p>
+<p>To push to the central repository, we use:</p>
 <pre><code>git push origin branch</code></pre>
 <p>git push permanently saves the changes into GitHub.</p>
 <p>GitHub and Git work together a lot, hence the benefit of using them are somewhat similar.</p>
@@ -55,8 +55,8 @@ git commit –m “message”</code></pre>
 <p>pandoc converts one markup format to another. Just to name a few, it can read Markdown, CommonMark, HTML, LaTex, CommonMark, PHP Markdown Extra, etc. and can write Markdown, Word docx, LaTex, Textile, etc. For instance, for this report, we convert from Markdown to HTML using the following code:</p>
 <pre><code>pandoc paper.md –s –o paper.html</code></pre>
 <p>The –s represents producing a standalone document and the –o represents the output file.</p>
-<p>Meanwhile, like Makefile, some computer requires users to download the pandoc software, in addition to other softwares like LaTex to output text files. After downloading all the required software, we are ready to convert files.</p>
-<p>The advantages of using pandoc is that we can have numerous different outputs without having to remake them. I realize that when I want to output a report, it is at times better to output a HTML file and other times better to output a text editor file. pandoc will become handy in situations like this.</p>
+<p>On a side note, like Makefile, some computers require users to download the pandoc software, in addition to other softwares like LaTex to output text files. After downloading all the required software, we are ready to convert files.</p>
+<p>The advantages of using pandoc is that we can have numerous different outputs without having to remake them. I realize that when I want to output a report, it is at times better to output a HTML file and other times better to output a text editor file. pandoc will become handy in situations like these.</p>
 <h2 id="markdown">Markdown</h2>
 <div class="figure">
 <img src="/Project1/images/markdown-logo.png" alt="Markdown logo" />
@@ -82,9 +82,10 @@ git commit –m “message”</code></pre>
 <hr />
 <p>The advantage of using Markdown is that no additional software is needed to make changes to the text and the codes are rather simple as compared to other programming languages.</p>
 <h3 id="resources">Resources</h3>
-<p>I did all the coding in Terminal. But before that, I had to download pandoc and create a GitHub account.</p>
+<p>The five computational tools mentioned above were used, in addition to Terminal where most of the coding occur. Installation of pandoc and creating a GitHub account was also required to be done. To complete the project, I got a lot of help from Sindhuja, I referred to the notes I took in class and Google helped a lot as well.</p>
 <h3 id="reflection">Reflection</h3>
-<p>For me personally, downloading the images was the easiest part. I made use of curl and just copied and pasted the url. Meanwhile, the most challenging part would be the very start. Creating the structure of the project was the most time consuming and I got stuck on it multiple times during the lab section and when I was continuing it at home. Pushing the committed file to GitHub took me multiple attempts because I was pushing it from the project folder instead of from the main repo. In the end, I created a new repo since the previous one had to many folders that I actually did not need. Sindhuja definitely helped a lot during the lab section and I googled a lot too. As a whole project, it took me the whole lab section, 2 hours, and I believe another 4 to 5 hours at home.</p>
+<p>For me, downloading the images was the easiest part. I made use of curl and just copied and pasted the url. Meanwhile, the most challenging part would be the very start. Creating the structure of the project was the most time consuming and I got stuck on it multiple times during the lab section and when I was continuing it at home. Pushing the committed file to GitHub took me multiple attempts because I was pushing it from the project folder instead of from the main repo. In the end, I created a new repo since the previous one had to many folders that I rather messed up. Tidying up the final output was also time consuming.</p>
+<p>As a whole project, it took me the whole lab section, 2 hours, and I believe another 5 or 6 hours.</p>
 <h1 id="conclusion">Conclusion</h1>
 <p>The project, as a whole, definitely made me understand GitHub better. It allowed me to put together the pieces of the puzzle and create a final output where each computational tool compliment each other. Before, just using terminal to move files and copy files did not make sense to me, but after this project, seeing how everything comes together made me appreciate the existing tools. Overall, it was a great project that cleared up a lot of misunderstandings I had.</p>
 </body>
