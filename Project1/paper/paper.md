@@ -149,8 +149,6 @@ Create bullet lists:
 
 Create blockquote:
 
-This is a blockquote:
-
 > This is project 1 of STAT 159 by Priscilla Hartono
 
 Create horizontal rule:
