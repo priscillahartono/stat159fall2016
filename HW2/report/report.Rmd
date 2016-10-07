@@ -1,8 +1,8 @@
 <h1 align = "center"> Simple Regression Analysis </h1>
 
-<p aligh = "center"> _Priscilla Hartono_
+<p aligh = "center"> <i> Priscilla Hartono </i> </p>
 
-_October 7th, 2016_ </p>
+<p align = "center"> <i> October 7th, 2016 </i> </p>
 
 
 ### Abstract
