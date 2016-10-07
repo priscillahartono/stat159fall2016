@@ -1,26 +1,35 @@
-## Abstract
+# :Simple Regression Analysis:
 
-This paper is the second project of STAT 159, Reproducible and Collaborative Statistical Data Science, taught by Professor Gaston Sanchez in the fall of 2016 at UC Berkeley.
+* :Priscilla Hartono: *
 
-The following paper will have a reproduction of the analysis from section 3.1 of chapter 3, linear regression, from the book: An Introduction to Statistical Learning, by James et al
+* :October 7th, 2016: *
+
+
+### Abstract
+
+This paper is the second homework of STAT 159, Reproducible and Collaborative Statistical Data Science, taught by Professor Gaston Sanchez in the fall of 2016 at UC Berkeley.
+
+A reproduction of the analysis found under section 3.1 of "An Introduction to Statistical Learning" (by James et al), can be found below.
+
 Link to the book:
 
 	http://www-bcf.usc.edu/~gareth/ISL/
+
 Link to dataset used:
 
 	http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv
 
 
-## Introduction
+### Introduction
 
 
-## Data
+### Data
 
 
-## Methodology
+### Methodology
 
 
-## Results
+### Results
 
 
-## Conclusion
+### Conclusion
