@@ -4,8 +4,10 @@ This paper is the second project of STAT 159, Reproducible and Collaborative Sta
 
 The following paper will have a reproduction of the analysis from section 3.1 of chapter 3, linear regression, from the book: An Introduction to Statistical Learning, by James et al
 Link to the book:
+
 	http://www-bcf.usc.edu/~gareth/ISL/
 Link to dataset used:
+
 	http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv
 
 
