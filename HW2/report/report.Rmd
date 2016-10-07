@@ -1,5 +1,3 @@
-library(captioner)
-
 <h1 align = "center"> Simple Regression Analysis </h1>
 
 <p align = "center"> <i> Priscilla Hartono </i> </p>
@@ -33,6 +31,6 @@ Link to dataset used:
 
 ### Results
 ![Figure 1: Scatterplot with fitted regression line](../images/scatterplot-tv-sales.png)
-
+<figcaption> Figure 1: Scatterplot with fitted regression line </figcaption>
 
 ### Conclusion
