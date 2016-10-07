@@ -30,6 +30,7 @@ Link to dataset used:
 
 
 ### Results
+![Figure 1: Scatterplot with fitted regression line](../images/scatterplot-tv-sales.png)
 
 
 ### Conclusion
