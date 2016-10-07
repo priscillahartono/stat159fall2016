@@ -1,8 +1,8 @@
-# :Simple Regression Analysis:
+<h1 align = "center"> Simple Regression Analysis </h1>
 
-* :Priscilla Hartono: *
+<p aligh = "center"> _Priscilla Hartono_
 
-* :October 7th, 2016: *
+_October 7th, 2016_ </p>
 
 
 ### Abstract
