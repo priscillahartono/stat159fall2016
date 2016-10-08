@@ -88,7 +88,7 @@ regressionTable <- xtable(regressionSummary$coefficients, digits=2, caption='Inf
 print(regressionTable, type = "latex", comment=FALSE, caption.placement='top')
 ```
 
-Table 2 computes the least squares model. The RSS value determines on average, how much the actual sales deviates from the true regression. Here, RSS is 3.26, meaning, on average, the actual sales deviates from the true regression by 3.26 units.
+Table 2 computes the least squares model. The RSE value determines on average, how much the actual sales deviates from the true regression. Here, RSE is 3.26, meaning, on average, the actual sales deviates from the true regression by 3.26 units.
 
 ```{r results='asis', message=FALSE, echo=FALSE}
 x = data.frame(
