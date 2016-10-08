@@ -103,4 +103,4 @@ grid.raster(scatterplot)
 
 In conclusion, linear regression model can be used to determine whether or not there is a relationship between 2 variables. With this information, a marketing model could be produced, in hopes of resulting in high product sales.
 
-With this particular data in mind, we can conclude that there is a positive correlation between TV and Sales. For every $1000 increase in TV advertising, approximately 47.5 units of product is sold.
+With this particular data in mind, we can conclude that there is a positive correlation between TV and Sales. From Table 1, we can observe that for every $1000 increase in TV advertising, approximately 47.5 units of product is sold.
