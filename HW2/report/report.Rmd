@@ -39,40 +39,47 @@ It turns out that linear regression can be used to develop this model.
 Linear regression is a straightforward approach to predict a linear relationship between X and Y, in this case, TV and Sales. Mathematically, this relationship can be written as
 $$ Sales = \beta_0 + \beta_1 * TV $$ 
 
-Here, $\beta_0$ and $\beta_1$ are unknown constants or coefficients that represent intercept and slope respectively so we want to get an estimate of $\hat{\beta_0}$ and $\hat{\beta_1}$ for a more accurate measure of future sales.
+Here, $\beta_0$ and $\beta_1$ are unknown constants or coefficients that represent intercept and slope respectively. We want to use our data to produce estimates of $\hat{\beta_0}$ and $\hat{\beta_1}$ for a more accurate measure of future sales, where $\hat y$ indicates a prediction of Y on the basis of X = x.
 
 ### Estimating Coefficients
-The most common approach involves minimizing the least squares criterion. This approach chooses $\hat{\beta_0}$ and $\hat{\beta_1}$ to minimize the residual sum of squares (RSS).
+Using data we have, we want to estimate the coefficients. The most common approach involves minimizing the least squares criterion. Let $\hat y_i = \hat{\beta_0} + \hat{\beta_1}x_i$ be the prediction for Y based on the ith value of X and $e_i = y_i - \hat{y_i}$ represents the difference between the ith observed response value and the ith response value that is predicted by our linear model.
 $$ RSS = e_1^2 + e_2^2 + \cdots + e_n^2 $$
 
-After some calculus, we can show that the minimizers are
+This approach chooses $\hat{\beta_0}$ and $\hat{\beta_1}$ to minimize the residual sum of squares (RSS). After some calculus, we can show that the minimizers are
 $$\hat{\beta_1} = \frac{\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)}{\sum_{i=1}^n (x_i - \bar x)^2}$$
 $$\hat{\beta_0} = \bar y - \hat{\beta_1}\bar x$$
 where $\bar y = \frac{1}{n}\sum_{i=1}^n y_i$ and $\bar x = \frac{1}{n}\sum_{i=1}^n x_i$ are the sample means.
 
 ### Assessing the Accuracy of the Coefficient Estimates
-Continuing from the above calculation, we want to find the p-value by computing a t-statistic, given by
+Continuing from the above calculation, we want to find the p-value by computing t-statistic, given by
 $$t = \frac{\hat{\beta_1} - 0}{SE(\hat{\beta_1})}$$
 
-The smaller the p-value, the stronger the association between X and Y and the greater the p-value, the weaker the association between X and Y.
+t-statistic measures the number of standard deviations that $\hat{\beta_1}$ is away from 0. Consequently, the probability of the p-value can be calculated by observing any value greater than or equal to |t|. The smaller the p-value, the stronger the association between X and Y and the greater the p-value, the weaker the association between X and Y. When the null hypothesis is rejected, it means that an association between X and Y exists, since the p-value is small enough, about 1%.
 
 ### Assessing the Accuracy of the Model
-The quality of the linear regression is typically assesed using the residual standard error (RSE) and the $R^2$ statistic.
+Once we have rejected the null hypothesis, we want to quantify the extent to which the model fits the data. The quality of the linear regression is typically assesed by the residual standard error (RSE) and the $R^2$ statistic.
 
 RSE is an estimate of the standard deviation of $\varepsilon$, computed by
 $$RSE = \sqrt{\frac{1}{n-2}RSS}$$
-It provides an absolute measure of lack of fit of the model to the data. This is measured in the units of Y, hence, it is not always clear what a good RSE constitutes. Meanwhile, $R^2$ statistic takes the form of a proportion, so it always takes on a value between 0 and 1, and is independent of the scale of Y.
+where
+$$RSS = \sum_{i=1}^n (y_i - \hat{y}_i)^2$$
+
+It roughly gives the average amount that the response will deviate from the true regression line. This is measured in the units of Y, hence, it is not always clear what a good RSE constitutes. Meanwhile, $R^2$ statistic takes the form of a proportion, it always takes on a value between 0 and 1, and is independent of the scale of Y.
 $$R^2 = \frac{TSS - RSS}{TSS}$$
-where TSS is the total sum of squares.
+where $TSS = \sum(y_i - \hat{y}_i)^2$ is the total sum of squares.
+
+RSS measures the amount of variability that is left unexplained after performing the regression. Hence, TSS - RSS measures the amount of variability in the response that is explained by performing the regression, and $R^2$ measures the proportion of variability in Y that can be explained using X.
 
 An $R^2$ statistic that is close to 1 indicates that a large proportion of the variability in the response has been explained by the regression, and an $R^2$ statistic that is close to 0 indicates that the regression did not explain much of the variability in the response.
+
+The $R^2$ statistic is a measure of the linear relationship between X and Y, similar to correlation. This suggests that we might be able to use r = Corr(X, Y) instead of $R^2$ to fit the linear model. In fact, we can use $R^2$ = $r^2$ 
 
 
 ## Results
 
-In Table 1, we computed the regression coefficients and in Table 2, more information about the least squares model can be found.
+From the formulas above, we can calculate the regression coefficients and least squares model to determine whether or not there is a correlation between X and Y (TV and Sales) and by how much.
 
-We can look at the p-value and determine whether there is a relationship between X and Y. In this case, since the p-value is close to 0, we can conclude that there is a correlation between TV and Sales. The RSE value is to determine on average how much the actual sales deviate from the true regression. Here, RSE is 3.26, meaning, on average, the actual sales deviates from the true regression by 3.26 units.
+Table 1 computes the regression coefficients. Looking at the p-value, we can determine whether there is a relationship between X and Y. In this case, since the p-value is close to 0, we can conclude that there is a correlation.
 
 ```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
 load('../data/regression.RData')
@@ -80,6 +87,8 @@ library(xtable)
 regressionTable <- xtable(regressionSummary$coefficients, digits=2, caption='Information about Regression Coefficients')
 print(regressionTable, type = "latex", comment=FALSE, caption.placement='top')
 ```
+
+Table 2 computes the least squares model. The RSS value determines on average, how much the actual sales deviates from the true regression. Here, RSS is 3.26, meaning, on average, the actual sales deviates from the true regression by 3.26 units.
 
 ```{r results='asis', message=FALSE, echo=FALSE}
 x = data.frame(
@@ -89,7 +98,7 @@ regressionTable2 <- xtable(x, digits=2, caption='Regression Quality Indices')
 print(regressionTable2, type = "latex", comment=FALSE, caption.placement='top')
 ```
 
-In Figure 1, the scatterplot can be found. We know that if there is a positive slope, there is a positive correlation and if there is a negative slope, there is a negative correlation. From this data, we can see a positive slope, showing that there is a positive correlation between TV and Sales.
+If the tables above shows that there is a correlation between X and Y, we want to analyze Figure 1 to determine if the correlation is positive or negative. Figure 1 outputs a scatterplot. We know that if there is a positive slope, there is a positive correlation and if there is a negative slope, there is a negative correlation. From this data, we can see a positive slope between TV and Sales, hence, showing that there is a positive correlation between them.
 
 ```{r fig.width=7, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot with fitted regression line", fig.pos="H"}
 library(png)
@@ -101,6 +110,6 @@ grid.raster(scatterplot)
 
 ## Conclusion
 
-In conclusion, linear regression model can be used to determine whether or not there is a relationship between 2 variables. With this information, a marketing model could be produced, in hopes of resulting in high product sales.
+By observing the p-value of this particular data, we can conclude that there is a correlation between TV and Sales, and it is a positive one. From Table 1, we can also point out that for every $1000 increase in TV advertising, approximately 47.5 units of product is sold.
 
-With this particular data in mind, we can conclude that there is a positive correlation between TV and Sales. From Table 1, we can observe that for every $1000 increase in TV advertising, approximately 47.5 units of product is sold.
+As a general idea, linear regression model can be used to determine whether or not there is a correlation between 2 variables, and if so, by how much. With this information, a marketing model can be produced, in hopes of resulting in high product sales.
