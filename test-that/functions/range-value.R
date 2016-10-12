@@ -1,9 +1,6 @@
-range_value <- function(x, na.rm = TRUE) {
-	if(na.rm == TRUE){
+range_value <- function(x, na.rm = FALSE) {
+	if(na.rm){
 		x = x[!is.na(x)]
 	}
-	else {
-		x = x
-	}
-	return(max(x) - min(x))
+	max(x) - min(x)
 }

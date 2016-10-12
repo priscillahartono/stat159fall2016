@@ -1,8 +1,3 @@
-x <- c(1, 2, 3, 4, 5)
-y <- c(1, 2, 3, 4, NA)
-z <- c(TRUE, FALSE, TRUE)
-w <- letters[1:5]
-
 #test for range value of x
 
 source("../functions/range-value.R")
@@ -28,7 +23,7 @@ test_that("range works as expected", {
 
 	expect_length(range_value(y), 1)
 	expect_equal(range_value(y), NA_real_)
-	expect_equal(range_value(y, FALSE), 3)
+	expect_equal(range_value(y, TRUE), 3)
 })
 
 #test for range value of z
@@ -68,7 +63,7 @@ test_that("missing values works as expected", {
         x <- c(1, 2, 3, 4, 5)
 
         expect_length(missing_values(x), 1)
-        expect_type(missing_values(x), 'double')
+        expect_type(missing_values(x), 'integer')
 	expect_gte(missing_values(x), 0)
 })
 
@@ -82,7 +77,7 @@ test_that("missing values works as expected", {
         y <- c(1, 2, 3, 4, NA)
 
         expect_length(missing_values(y), 1)
-        expect_type(missing_values(y), 'double')
+        expect_type(missing_values(y), 'integer')
         expect_gte(missing_values(y), 0)
 })
 
@@ -96,7 +91,7 @@ test_that("missing values works as expected", {
         z <- c(TRUE, FALSE, TRUE)
 
         expect_length(missing_values(z), 1)
-        expect_type(missing_values(z), 'double')
+        expect_type(missing_values(z), 'integer')
         expect_gte(missing_values(z), 0)
 })
 
@@ -110,6 +105,6 @@ test_that("missing values works as expected", {
         w <- letters[1:5]
 
         expect_length(missing_values(w), 1)
-        expect_type(missing_values(w), 'double')
+        expect_type(missing_values(w), 'integer')
         expect_gte(missing_values(w), 0)
 })
