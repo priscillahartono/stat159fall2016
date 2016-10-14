@@ -18,31 +18,107 @@ includeSourceDocuments()
 ```
 <!-- Don't edit the material above this line -->
 
-# Abstract
+## Abstract
 
 This paper is the third homework of STAT 159, Reproducible and Collaborative Statistical Data Science, taught by Professor Gaston Sanchez in the fall of 2016 at UC Berkeley.
 
 In this paper we reproduce the analysis in section 3.2, *Multiple Linear Regression*, of the book [**An Introduction to Statistical Learning**](http://www-bcf.usc.edu/~gareth/ISL/) (by James et al) using dataset, [**Advertising.csv**](http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv).
 
 
-# Introduction
+## Introduction
 
 In the real world, we cannot predict a response on the basis of a single predictor variable. We can create a simple regression analysis for each different variables, however, this ignores the other predictors.  Due to this, multiple linear regression is useful. It accomodates multiple predictors by giving each a separate slope coefficient in a single model.
 
 
-# Data
+## Data
 
 The dataset we used in this paper is Advertising.csv. It contains 200 entries of different markets’ marketing budget through each media medium (TV, Radio, Newspaper) and how many units were sold.
 
 *Sales in thousands of units. Budgets in thousands of dollars*
 
-For this paper, we used all the variables TV and Sales. The numbers under TV, Radio, and Newspaper refers to how much budget was put into advertising by each, and the number under Sales reflects the number of units sold in that particular market.
+For this paper, we used all the variables: TV, Radio, Newspaper, and Sales. The numbers under TV, Radio, and Newspaper refers to how much budget was put into advertising by each, and the number under Sales reflects the number of units sold in that particular market.
+
+Before we start doing the regressions, we want to look at how our data look like:
+```{r fig.width=3, fig.height=3, echo=FALSE, fig.align='center', fig.cap="Histogram of TV", fig.pos="H"}
+library(png)
+library(grid)
+histogramTV <- readPNG('../images/histogram-tv.png')
+grid.raster(histogramTV)
+```
+
+```{r fig.width=3, fig.height=3, echo=FALSE, fig.align='center', fig.cap="Histogram of Radio", fig.pos="H"}
+library(png)
+library(grid)
+histogramRadio <- readPNG('../images/histogram-radio.png')
+grid.raster(histogramRadio)
+```
+
+```{r fig.width=3, fig.height=3, echo=FALSE, fig.align='center', fig.cap="Histogram of Newspaper", fig.pos="H"}
+library(png)
+library(grid)
+histogramNewspaper <- readPNG('../images/histogram-newspaper.png')
+grid.raster(histogramNewspaper)
+```
+
+```{r fig.width=3, fig.height=3, echo=FALSE, fig.align='center', fig.cap="Histogram of Sales", fig.pos="H"}
+library(png)
+library(grid)
+histogramSales <- readPNG('../images/histogram-sales.png')
+grid.raster(histogramSales)
+```
 
 
-# Methodology
+## Methodology
+
+The multiple linear regression model takes the form
+$$ Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... +  \beta_pX_p +  \epsilon $$ 
+and for this dataset,
+$$ sales = \beta_0 + \beta_1 * TV + \beta_2 * Radio + \beta_3 * Newspaper + \epsilon $$ 
+
+$\hat{\beta_1}$ is the value we are most interested in. We need it to determine whether there is a positive or negative correlation. Positive correlation is when $\hat{\beta_1}$ comes out to be positive, meaning higher spending of advertising through this media medium results in more sales. Following this, we want to know its significance. We use the RSS, TSS, RSE, R2, and F-statistic to determine this.
 
 
-# Results
+## Results
+
+To have a general idea of the relationship between each predictor and target, we want to analyze the scatterplot and matrix.
+
+```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot Matrix", fig.pos="H"}
+library(png)
+library(grid)
+scatterplotMatrix <- readPNG('../images/scatterplot-matrix.png')
+grid.raster(scatterplotMatrix)
+```
+
+```{r echo = FALSE}
+load("../data/correlation-matrix.Rdata")
+library(pander)
+pander(Matrix, caption = "Correlation Matrix")
+```
+
+Notice that the correlation between radio and newspaper is 0.35, revealing that there is a tendancy to spend more on newspaper advertising in market where more is spent on radio advertising. Although newspaper advertising does not really affect sales, it is a surrogate for radio advertising, meaning newspaper gets "credit" for the effect of radio on sales.
+
+```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot TV and Sales", fig.pos="H"}
+library(png)
+library(grid)
+scatterplotTVSales <- readPNG('../images/scatterplot-tv-sales.png')
+grid.raster(scatterplotMatrix)
+```
+
+```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot Radio and Sales", fig.pos="H"}
+library(png)
+library(grid)
+scatterplotRadioSales <- readPNG('../images/scatterplot-radio-sales.png')
+grid.raster(scatterplotRadioSales)
+```
+
+```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot Newspaper and Sales", fig.pos="H"}
+library(png)
+library(grid)
+scatterplotNewspaperSales <- readPNG('../images/scatterplot-newspaper-sales.png')
+grid.raster(scatterplotNewspaperSales)
+```
+
+
 
 1. Is at least one of the predictors useful in predicting the response?
 2. Do all predictors help to explain the response, or is only a subset of the predictors useful?
