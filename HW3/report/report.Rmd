@@ -31,7 +31,7 @@ In the real world, when predicting a response, we want to take into account all 
 
 ## Data
 
-The dataset we used in this paper is Advertising.csv. It contains 200 entries of different markets’ marketing budget through each media medium (TV, Radio, Newspaper) and how many units were sold.
+The dataset we used in this paper is Advertising.csv. It contains `200` entries of different markets’ marketing budget through each media medium (TV, Radio, Newspaper) and how many units were sold.
 
 *Sales in thousands of units. Budgets in thousands of dollars*
 
@@ -114,7 +114,7 @@ regressionTable <- xtable(summaryMultiReg$coefficients, digits=2, caption='Least
 print(regressionTable, type = "latex", comment=FALSE, caption.placement='bottom')
 ```
 
-For example, Table 3 shows approximately 189 units were sold following an increase of $1000 budget in radio advertising.
+For example, Table 3 shows approximately `189` units were sold following an increase of $1000 budget in radio advertising.
 
 Continuing from here, to see more clearly the relationship between each predictor and target, we can study the scatterplot matrix and each predictor's scatterplot.
 
@@ -131,7 +131,7 @@ library(pander)
 pander(Matrix, caption = "Correlation Matrix")
 ```
 
-Notice that the correlation between radio and newspaper is 0.35, revealing that there is a tendancy to spend more on newspaper advertising in market where more is spent on radio advertising. Although newspaper advertising does not really affect sales, it is a surrogate for radio advertising, meaning newspaper gets "credit" for the effect of radio on sales.
+Notice that the correlation between radio and newspaper is `0.35`, revealing that there is a tendancy to spend more on newspaper advertising in market where more is spent on radio advertising. Although newspaper advertising does not really affect sales, it is a surrogate for radio advertising, meaning newspaper gets "credit" for the effect of radio on sales.
 
 ```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot TV and Sales", fig.pos="H"}
 library(png)
@@ -164,26 +164,27 @@ regressionTable2 <- xtable(x, digits=2, caption='More information about the leas
 print(regressionTable2, type = "latex", comment=FALSE, caption.placement='bottom')
 ```
 
-1. Is at least one of the predictors useful in predicting the response?
+**1. Is at least one of the predictors useful in predicting the response?**
 
-In order to determine if there is a relationship between the response and the predictor we want to check whether $\beta_i$ = 0. We do this by testing the null versus alternative hypothesis. If the $H_0$ is true, we would expect the F-statistic to be close to 1 when there is no relationship and if $H_1$ is true, we would expect the F-statistic to be greater than 1.
+In order to determine if there is a relationship between the response and the predictor we want to check whether $\beta_i$ = `0`. We do this by testing the null versus alternative hypothesis. If the $H_0$ is true, we would expect the F-statistic to be close to `1` when there is no relationship and if $H_1$ is true, we would expect the F-statistic to be greater than `1`.
 
-For this dataset's case, since F-statistic is greater than 1, it suggests that at least one of the advertising media must be related to sales.
+For this dataset's case, since F-statistic is greater than `1`, it suggests that at least one of the advertising media must be related to sales.
 
-2. Do all predictors help to explain the response, or is only a subset of the predictors useful?
+**2. Do all predictors help to explain the response, or is only a subset of the predictors useful?**
 
 It is possible that all of the predictors are associated with the response, but it is more often the case that the response is only related to a subset of the predictors.
-CONTINUE
 
-3. How well does the model fit the data?
+We use the p-value to decide this. 
+
+**3. How well does the model fit the data?**
 
 To determine how well the model fit the data, we need the RSE and $R^2$. An $R^2$ value close to 1 indicates that the model explains a large portion of the variance in the response variable.
 
-For this dataset's case, the model uses all 3 advertising media to predict sales has an $R^2$ value of 0.8972. On the other hand, the model that uses only TV and Radio predicts sales has $R^2$ value of 0.89719, meaning there is a small increase in $R^2$ value if we include newspaper advertising (advertising in newspaper is not significant). In contrast, the model containing only TV as predictor has $R^2$ value of 0.61. Adding radio to the model leads to a substantial imporvement.
+For this dataset's case, the model uses all 3 advertising media to predict sales has an $R^2$ value of `0.8972`. On the other hand, the model that uses only TV and Radio predicts sales has $R^2$ value of `0.89719`, meaning there is a small increase in $R^2$ value if we include newspaper advertising (advertising in newspaper is not significant). In contrast, the model containing only TV as predictor has $R^2$ value of 0.61. Adding radio to the model leads to a substantial imporvement.
 
-As for RSE, when the model contains TV and radio, it has an RSE of 1.681, and when the model contains all 3 predictors, it has an RSE of 1.686. Meanwhile, the model that contains only TV has an RSE of 3.26. This shows that using a model that uses TV and radio expenditures to predict sales is more accurate than using a model that uses TV expenditure only.
+As for RSE, when the model contains TV and radio, it has an RSE of `1.681`, and when the model contains all `3` predictors, it has an RSE of `1.686`. Meanwhile, the model that contains only TV has an RSE of `3.26`. This shows that using a model that uses TV and radio expenditures to predict sales is more accurate than using a model that uses TV expenditure only.
 
-4. How accurate is the prediction?
+**4. How accurate is the prediction?**
 
 To check for accuracy, we use confidence interval. 
 CONTINUE
