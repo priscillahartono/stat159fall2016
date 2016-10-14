@@ -3,21 +3,19 @@ title: "Multiple Regression Analysis"
 author: "Priscilla Hartono"
 date: "10/14/2016"
 output:
+  pdf_document: default
   html_document:
     fig_height: 3
     fig_width: 5
-  pdf_document: default
+header-includes: \usepackage{float}
 ---
-<!-- Don't edit in between this line and the one below -->
+
 ```{r include=FALSE}
 # Don't delete this chunk if you are using the DataComputing package
-library(DataComputing)
 ```
 *Source file* 
 ```{r, results='asis', echo=FALSE}
-includeSourceDocuments()
 ```
-<!-- Don't edit the material above this line -->
 
 ## Abstract
 
@@ -28,7 +26,7 @@ In this paper we reproduce the analysis in section 3.2, *Multiple Linear Regress
 
 ## Introduction
 
-In the real world, when predicting a response, we want to take into account all possible predictors. So far we know how to take a simple regression analysis of a single predictor variable. Now, we want to make more meaningful analysis by including multiple predictors, doing a multiple linear regression. It accomodates multiple predictors by giving each a separate slope coefficient in a single model.
+In the real world, when predicting a response, we want to take into account all possible predictors. So far we know how to make a simple regression analysis of a single predictor variable. Now, we want to make more meaningful analysis by including multiple predictors. We can do this by multiple linear regression, which accomodates multiple predictors by giving each a separate slope coefficient in a single model.
 
 
 ## Data
@@ -39,7 +37,16 @@ The dataset we used in this paper is Advertising.csv. It contains 200 entries of
 
 For this paper, we used all the variables: TV, Radio, Newspaper, and Sales. The numbers under TV, Radio, and Newspaper refers to how much budget was put into advertising by each, and the number under Sales reflects the number of units sold in that particular market.
 
-Before we start doing the regressions, we want to look at how our data look like through histograms and simple regression.
+Before we start doing the regressions, we want to look at how our data look like through histograms and simple linear regression.
+
+```{r echo=FALSE}
+library(png)
+library(grid)
+library(xtable)
+load('../data/regression.Rdata')
+load('../data/correlation-matrix.RData')
+```
+
 ```{r fig.width=3, fig.height=3, echo=FALSE, fig.align='center', fig.cap="Histogram of TV", fig.pos="H"}
 library(png)
 library(grid)
@@ -68,40 +75,48 @@ histogramSales <- readPNG('../images/histogram-sales.png')
 grid.raster(histogramSales)
 ```
 
-CODE FOR SIMPLE REGRESSION HERE
+```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
+TVRegression <- xtable(summary(TVSalesReg)$coefficients, digits=4, caption='Regression of TV on Sales')
+print(TVRegression, type = "latex", comment=FALSE, caption.placement='bottom')
+```
+
+```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
+radioRegression <- xtable(summary(RadioSalesReg)$coefficients, digits=4, caption='Regression of Radio on Sales')
+print(radioRegression, type = "latex", comment=FALSE, caption.placement='bottom')
+```
+
+```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
+newspaperRegression <- xtable(summary(NewspaperSalesReg)$coefficients, digits=4, caption='Regression of Newspaper on Sales')
+print(newspaperRegression, type = "latex", comment=FALSE, caption.placement='bottom')
+```
 
 
 ## Methodology
 
 The multiple linear regression model takes the form
-$$ Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... +  \beta_pX_p +  \epsilon $$ 
-and for this dataset,
-$$ sales = \beta_0 + \beta_1 * TV + \beta_2 * Radio + \beta_3 * Newspaper + \epsilon $$ 
+$$
+Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... +  \beta_pX_p +  \epsilon
+$$ 
 
-As in the case of simple linear regression, we want to get estimates of $\beta_0, \beta_1, ..., \beta_p$.  $\hat{\beta_i}$ is the value we are interested in. We need it to determine whether there is a positive or negative correlation. Positive correlation is when $\hat{\beta_i}$ comes out to be positive, meaning higher spending of advertising through this media medium results in more sales. Following this, we want to know its significance. We use the RSS, TSS, RSE, R2, and F-statistic to determine this.
+As in the case of simple linear regression, we want to get estimates of $\beta_0, \beta_1, ..., \beta_p$.  $\hat{\beta_i}$ is the value we are interested in. We need it to determine whether there is a positive or negative correlation. When $\hat{\beta_i}$ comes out to be positive, there is positive correlation, meaning higher spending of advertising through this media medium results in more sales.
+
+Knowing which predictors produces results, we want to know its significance. Here, we need the RSS, TSS, RSE, R2, and F-statistic.
 
 
 ## Results
 
-# Table 3.3
-```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
-reg_radio <- xtable(summary(Radio_regression)$coefficients, digits=4, caption='Regression of Radio on Sales')
-print(reg_radio, type = "latex", comment=FALSE, caption.placement='top')
-```
+To have an idea of how much sales increase with an additional $1000 budget in each media medium we need the multiple regression coefficient estimates.
 
-```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
-reg_news <- xtable(summary(Newspaper_regression)$coefficients, digits=4, caption='Regression of Newspaper on Sales')
-print(reg_news, type = "latex", comment=FALSE, caption.placement='top')
-```
-# Table 3.4
 ```{r results='asis', message=FALSE, echo=FALSE, warning=FALSE}
 load('../data/regression.RData')
 library(xtable)
 regressionTable <- xtable(summaryMultiReg$coefficients, digits=2, caption='Least squares coefficient estimates of the multiple linear regression of number of units sold on TV, radio, and newspaper advertising budgets')
-print(regressionTable, type = "latex", comment=FALSE, caption.placement='top')
+print(regressionTable, type = "latex", comment=FALSE, caption.placement='bottom')
 ```
 
-To have a general idea of the relationship between each predictor and target, we want to analyze the scatterplot and matrix.
+For example, Table 3 shows approximately 189 units were sold following an increase of $1000 budget in radio advertising.
+
+Continuing from here, to see more clearly the relationship between each predictor and target, we can study the scatterplot matrix and each predictor's scatterplot.
 
 ```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot Matrix", fig.pos="H"}
 library(png)
@@ -110,7 +125,6 @@ scatterplotMatrix <- readPNG('../images/scatterplot-matrix.png')
 grid.raster(scatterplotMatrix)
 ```
 
-# Table 3.5
 ```{r echo = FALSE}
 load("../data/correlation-matrix.Rdata")
 library(pander)
@@ -123,7 +137,7 @@ Notice that the correlation between radio and newspaper is 0.35, revealing that 
 library(png)
 library(grid)
 scatterplotTVSales <- readPNG('../images/scatterplot-tv-sales.png')
-grid.raster(scatterplotMatrix)
+grid.raster(scatterplotTVSales)
 ```
 
 ```{r fig.width=5, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot Radio and Sales", fig.pos="H"}
@@ -140,15 +154,15 @@ scatterplotNewspaperSales <- readPNG('../images/scatterplot-newspaper-sales.png'
 grid.raster(scatterplotNewspaperSales)
 ```
 
-# Table 3.6 
+Finding out the significance of each predictor is key to producing a meaningful analysis. Table 6 gives us this information.
+
 ```{r results='asis', message=FALSE, echo=FALSE}
 x = data.frame(
   Quality = c("RSE", "R2", "F-statistic"),
   Value = c(summaryMultiReg$sigma, summaryMultiReg$r.squared, summaryMultiReg$fstatistic[1]))
 regressionTable2 <- xtable(x, digits=2, caption='More information about the least squares model for the regression of number of units sold on TV, radio, and newspaper advertising budgets in the Advertising data.')
-print(regressionTable2, type = "latex", comment=FALSE, caption.placement='top')
+print(regressionTable2, type = "latex", comment=FALSE, caption.placement='bottom')
 ```
-
 
 1. Is at least one of the predictors useful in predicting the response?
 
@@ -158,10 +172,21 @@ For this dataset's case, since F-statistic is greater than 1, it suggests that a
 
 2. Do all predictors help to explain the response, or is only a subset of the predictors useful?
 
-CONTINUE HERE
+It is possible that all of the predictors are associated with the response, but it is more often the case that the response is only related to a subset of the predictors.
+CONTINUE
 
 3. How well does the model fit the data?
+
+To determine how well the model fit the data, we need the RSE and $R^2$. An $R^2$ value close to 1 indicates that the model explains a large portion of the variance in the response variable.
+
+For this dataset's case, the model uses all 3 advertising media to predict sales has an $R^2$ value of 0.8972. On the other hand, the model that uses only TV and Radio predicts sales has $R^2$ value of 0.89719, meaning there is a small increase in $R^2$ value if we include newspaper advertising (advertising in newspaper is not significant). In contrast, the model containing only TV as predictor has $R^2$ value of 0.61. Adding radio to the model leads to a substantial imporvement.
+
+As for RSE, when the model contains TV and radio, it has an RSE of 1.681, and when the model contains all 3 predictors, it has an RSE of 1.686. Meanwhile, the model that contains only TV has an RSE of 3.26. This shows that using a model that uses TV and radio expenditures to predict sales is more accurate than using a model that uses TV expenditure only.
+
 4. How accurate is the prediction?
+
+To check for accuracy, we use confidence interval. 
+CONTINUE
 
 
 # Conclusions
