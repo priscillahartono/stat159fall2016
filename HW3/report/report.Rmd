@@ -7,3 +7,47 @@ output:
     fig_height: 3
     fig_width: 5
 ---
+<!-- Don't edit in between this line and the one below -->
+```{r include=FALSE}
+# Don't delete this chunk if you are using the DataComputing package
+library(DataComputing)
+```
+*Source file* 
+```{r, results='asis', echo=FALSE}
+includeSourceDocuments()
+```
+<!-- Don't edit the material above this line -->
+
+# Abstract
+
+This paper is the third homework of STAT 159, Reproducible and Collaborative Statistical Data Science, taught by Professor Gaston Sanchez in the fall of 2016 at UC Berkeley.
+
+In this paper we reproduce the analysis in section 3.2, *Multiple Linear Regression*, of the book [**An Introduction to Statistical Learning**](http://www-bcf.usc.edu/~gareth/ISL/) (by James et al) using dataset, [**Advertising.csv**](http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv).
+
+
+# Introduction
+
+In the real world, we cannot predict a response on the basis of a single predictor variable. We can create a simple regression analysis for each different variables, however, this ignores the other predictors.  Due to this, multiple linear regression is useful. It accomodates multiple predictors by giving each a separate slope coefficient in a single model.
+
+
+# Data
+
+The dataset we used in this paper is Advertising.csv. It contains 200 entries of different markets’ marketing budget through each media medium (TV, Radio, Newspaper) and how many units were sold.
+
+*Sales in thousands of units. Budgets in thousands of dollars*
+
+For this paper, we used all the variables TV and Sales. The numbers under TV, Radio, and Newspaper refers to how much budget was put into advertising by each, and the number under Sales reflects the number of units sold in that particular market.
+
+
+# Methodology
+
+
+# Results
+
+1. Is at least one of the predictors useful in predicting the response?
+2. Do all predictors help to explain the response, or is only a subset of the predictors useful?
+3. How well does the model fit the data?
+4. How accurate is the prediction?
+
+
+# Conclusions
