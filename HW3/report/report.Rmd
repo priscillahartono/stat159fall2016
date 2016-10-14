@@ -1,5 +1,9 @@
 ---
-output: pdf_document
+title: "Multiple Regression Analysis"
+author: "Priscilla Hartono"
+date: "10/14/2016"
+output: 
+  html_document:
+    fig_height: 3
+    fig_width: 5
 ---
-
-hello
