@@ -13,8 +13,9 @@ header-includes: \usepackage{float}
 ```{r include=FALSE}
 # Don't delete this chunk if you are using the DataComputing package
 ```
-*Source file* 
+
 ```{r, results='asis', echo=FALSE}
+
 ```
 
 ## Abstract
@@ -174,7 +175,7 @@ For this dataset's case, since F-statistic is greater than `1`, it suggests that
 
 It is possible that all of the predictors are associated with the response, but it is more often the case that the response is only related to a subset of the predictors.
 
-We use the p-value to decide this. 
+Computing the F-statistic allows us to get the p-value, and this can be used to conclude which predictor is related to the response. However, we should be careful when p is large as it is likely to make some false discoveries.
 
 **3. How well does the model fit the data?**
 
@@ -186,8 +187,19 @@ As for RSE, when the model contains TV and radio, it has an RSE of `1.681`, and 
 
 **4. How accurate is the prediction?**
 
-To check for accuracy, we use confidence interval. 
-CONTINUE
+From the coefficient estimates, we can calculate the least square planes
+$$Y = \hat{\beta_0} + \hat{\beta_1}X_1 + ... + \hat{\beta_p}X_p$$
+which is an estimate of the true population regression plane
+$$f(X) = \beta_0 + \beta_1X_1 + ... + \beta_pX_p$$
+This is inaccurate because of the estimates, so we should compute a confidence interval.
+
+For this dataset, given that `$100,000` is spent on TV advertising and `$20,000` on radio advertsing, the `95%` confience interval is [10,985, 11,528], meaning `95%` of the interval will contain the true value of f(X).
+
+A prediction interval can be used to quantify the uncertainty of sales. Given that `$100,000` is spent on TV advertising and `$20,000` on radio advertising, `95%` prediction interval is [7,930, 14,580], meaning 95% of the interval will contain the true value of Y.
 
 
-# Conclusions
+## Conclusions
+
+All in all, multiple linear regression is helpful when analyzing multiple predictors. In this paper, we analyzed the dataset Advertising.csv. We looked for correlations of Sales to TV, Radio, and Newspaper using simple linear regression and multiple linear regression. From the scatterplots, tables, and computations, we are able to conclude that newspaper is not a helpful predictor of sales and the model fits pretty well with the data.
+
+
