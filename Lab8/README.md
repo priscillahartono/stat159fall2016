@@ -1,9 +1,14 @@
 Priscilla Hartono
 
-STAT 159 Lab 8
+STAT 159 Lab 8 - ShinyDoc for scatterplot
 
-This is Lab 8 of STAT 159. This lab requires us to create a ShinyDoc that plots scatterplot of sales vs. different advertising channels. The plot displayed will be configured by the selection of items in a dropdown.
-The inputs are TV, Radio, or Newspaper, and the output is Sales.
+This is Lab 8 of STAT 159. This lab requires us to create a ShinyDoc that plots scatterplot of sales vs. different advertising channels.
+There are 3 files in this folder:
+* This README.md file
+* Advertising.csv: the data
+* app.R: the code
+
+Running app.R will display a plot that is configured by the selection of items in a dropdown. The inputs are TV, Radio, or Newspaper, and the output is Sales.
 
 To reproduce this lab, changes can be made on the app.R file. 
 
