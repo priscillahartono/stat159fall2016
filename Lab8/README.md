@@ -10,7 +10,7 @@ There are 3 files in this folder:
 
 Running app.R will display a plot that is configured by the selection of items in a dropdown. The inputs are TV, Radio, or Newspaper, and the output is Sales.
 
-To reproduce this lab, changes can be made on the app.R file. 
+To reproduce this lab, clone this repo, download Advertising.csv, and run app.R in RStudio. 
 
 [![N|Solid](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
