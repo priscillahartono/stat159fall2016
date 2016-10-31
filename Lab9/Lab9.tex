@@ -2,15 +2,18 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass{article}
 \usepackage{url}
+\usepackage{Sweave}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+\input{Lab9-concordance}
 
-<<setup, include=FALSE, cache=FALSE>>=
-library(knitr)
-# set global chunk options
-opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
-options(formatR.arrow=TRUE,width=90)
-@
+\begin{Schunk}
+\begin{Sinput}
+> library(knitr)
+> # set global chunk options
+> opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+> options(formatR.arrow=TRUE,width=90)
+\end{Sinput}
+\end{Schunk}
 
 \title{Simple Regression Analysis}
 \author{Priscilla Hartono}
