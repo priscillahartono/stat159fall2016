@@ -103,5 +103,36 @@ From the formulas above, we can calculate the regression coefficients and least 
 
 Table 1 computes the regression coefficients. Looking at the p-value, we can determine whether there is a relationship between X and Y. In this case, since the p-value is close to 0, we can conclude that there is a correlation.
 
+<<regressionTable, message=FALSE, echo=FALSE, warning=FALSE, results=tex>>=
+load('regression.RData')
+library(xtable)
+regressionTable <- xtable(regressionSummary$coefficients, digits=2, caption='Information about Regression Coefficients')
+print(regressionTable, type = "latex", comment=FALSE, caption.placement='top')
+@
+
+Table 2 computes the least squares model. The RSE value determines on average, how much the actual sales deviates from the true regression. Here, RSE is 3.26, meaning, on average, the actual sales deviates from the true regression by 3.26 units.
+
+<<regressionTable2, results=tex, message=FALSE, echo=FALSE>>=
+x = data.frame(
+  Quality = c("RSE", "R2", "F-statistic"),
+  Value = c(regressionSummary$sigma, regressionSummary$r.squared, regressionSummary$fstatistic[1]))
+regressionTable2 <- xtable(x, digits=2, caption='Regression Quality Indices')
+print(regressionTable2, type = "latex", comment=FALSE, caption.placement='top')
+@
+
+If the tables above shows that there is a correlation between X and Y, we want to analyze Figure 1 to determine if the correlation is positive or negative. Figure 1 outputs a scatterplot. We know that if there is a positive slope, there is a positive correlation and if there is a negative slope, there is a negative correlation. From this data, we can see a positive slope between TV and Sales, hence, showing that there is a positive correlation between them.
+
+<<scatterplot, fig.width=7, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot with fitted regression line", fig.pos="H">>=
+library(png)
+library(grid)
+scatterplot <- readPNG('scatterplot-tv-sales.png')
+grid.raster(scatterplot)
+@
+
+\section{Conclusion}
+By observing the p-value of this particular data, we can conclude that there is a correlation between TV and Sales, and it is a positive one. From Table 1, we can also point out that for every \$1000 increase in TV advertising, approximately 47.5 units of product is sold.
+
+As a general idea, linear regression model can be used to determine whether or not there is a correlation between 2 variables, and if so, by how much. With this information, a marketing model can be produced, in hopes of resulting in high product sales.
+
 \end{document}
 
