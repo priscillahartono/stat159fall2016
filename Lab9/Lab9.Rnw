@@ -122,12 +122,12 @@ print(regressionTable2, type = "latex", comment=FALSE, caption.placement='top')
 
 If the tables above shows that there is a correlation between X and Y, we want to analyze Figure 1 to determine if the correlation is positive or negative. Figure 1 outputs a scatterplot. We know that if there is a positive slope, there is a positive correlation and if there is a negative slope, there is a negative correlation. From this data, we can see a positive slope between TV and Sales, hence, showing that there is a positive correlation between them.
 
-<<scatterplot, fig.width=7, fig.height=5, echo=FALSE, fig.align='center', fig.cap="Scatterplot with fitted regression line", fig.pos="H">>=
-library(png)
-library(grid)
-scatterplot <- readPNG('scatterplot-tv-sales.png')
-grid.raster(scatterplot)
-@
+\begin{figure}
+\centering
+\includegraphics[%
+width=0.8\textwidth]{scatterplot-tv-sales.png}
+\caption{\label{fig:Scatter}Scatterplot with fitted regression line}
+\end{figure}
 
 \section{Conclusion}
 By observing the p-value of this particular data, we can conclude that there is a correlation between TV and Sales, and it is a positive one. From Table 1, we can also point out that for every \$1000 increase in TV advertising, approximately 47.5 units of product is sold.

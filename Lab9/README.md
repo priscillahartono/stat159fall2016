@@ -5,7 +5,9 @@ STAT 159 Lab 9 - Simple Regression Analysis
 This is Lab 9 of STAT 159. This lab requires us to rewrite HW 2 using Rnw file format and convert it into a LaTex document.
 The files in this folder are:
 * This README.md file
-* Supporting images
+* Supporting files
+	* scatterplot-tv-sales.png
+	* regression.RData
 * Lab9.Rnw: the code
 * Lab9.pdf: the LaTex output
 
